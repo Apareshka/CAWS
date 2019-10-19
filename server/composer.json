@@ -1,0 +1,9 @@
+{
+    "name": "ivteplo/challenge-server",
+    "description": "The server for #SpaceAppsVinnytsia2019",
+    "type": "project",
+    "license": "Apache License 2.0",
+    "require": {
+        "klein/klein": "^2.1"
+    }
+}

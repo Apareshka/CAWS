@@ -15,7 +15,6 @@ def get_hazard_risk(country):
     search_page = float(search_page.find("a", {"title": country}).parent.parent("td")[2].text[:-2])/100
     return search_page
 
-import pandas as pd
 age, sex, country, region = sys.argv[1:]
 age = int(age)
 economical_factor = get_gdp(country)
@@ -38,6 +37,8 @@ def mortality(age, sex, economical_factor, hazard_factor):
         age_factor = 0.7
     if sex == "M":
         sex_factor = 0.6
+    elif sex == "ANY":
+        sex_factor = 0.7
     else:
         sex_factor = 0.8
     mortality_risk = sex_factor*age_factor*economical_factor*hazard_factor

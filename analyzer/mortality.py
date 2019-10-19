@@ -4,24 +4,40 @@ import bs4
 
 
 def get_gdp(country):
-    search_page = requests.get("https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)_per_capita")
-    search_page = bs4.BeautifulSoup(search_page.text, "html.parser")("table")
+    file = open("List of countries by GDP.html", "r", encoding="UTF-8")
+    search_page = file.read()
+    file.close()
+    search_page = bs4.BeautifulSoup(search_page, "html.parser")("table")
     return float(search_page[1].find("a", {"title": country}).parent.parent("td")[-1].text.replace(",", "."))
 
 
 def get_hazard_risk(country):
-    search_page = requests.get("https://en.wikipedia.org/wiki/List_of_countries_by_natural_disaster_risk")
-    search_page = bs4.BeautifulSoup(search_page.text, "html.parser")
+    file = open("List of countries by natural disaster risk.html", "r", encoding="UTF-8")
+    search_page = file.read()
+    file.close()
+    search_page = bs4.BeautifulSoup(search_page, "html.parser")
     search_page = float(search_page.find("a", {"title": country}).parent.parent("td")[2].text[:-2])/100
+    return search_page
+
+
+
+def get_mid_age(country):
+    file = open("List of countries by median age.html", "r", encoding="UTF-8")
+    search_page = file.read()
+    file.close()
+    search_page = bs4.BeautifulSoup(search_page, "html.parser")
+    search_page =float(search_page.find("a", {"title": country}).parent.parent.parent("td")[2].text)
     return search_page
 
 age, sex, country, region = sys.argv[1:]
 age = int(age)
+if age == 0:
+    age = get_mid_age(country)
 economical_factor = get_gdp(country)
 hazard_factor = get_hazard_risk(country)
 def mortality(age, sex, economical_factor, hazard_factor):
     """A function used to calculate death chance for a person for a year according to their social category"""
-    if age <=5:
+    if age > 0 and age <=5:
         age_factor = 0.5
     elif age > 5 and age < 13:
         age_factor = 0.7

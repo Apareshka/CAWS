@@ -18,6 +18,18 @@ class Server {
             return file_get_contents(__DIR__ . "/../web/service.html");
         });
 
+        $klein->respond('GET', '/risk', function () {
+            if (!isset($_GET["country"]) or !isset($_GET["sex"]) or !isset($_GET["age"])) {
+                return 1;
+            }
+
+            $country = $_GET["country"];
+            $sex = $_GET["sex"];
+            $age = $_GET["age"];
+
+            return shell_exec("python ".__DIR__."/../analyzer/mortality.py $age $sex $country");
+        });
+
         $klein->respond('GET', '/risks', function () {
             try {
                 $risksConn = new PDO("sqlite:".__DIR__."/../databases/risks.sqlite");
@@ -43,13 +55,13 @@ class Server {
                     $arr[] = [
                         "id" => $id,
                         "country" => $country,
-                        "risk" => $risk
+                        "risk" => $v
                     ];
                 }
 
-                echo json_encode($arr);
+                return json_encode($arr);
             } catch (Exception $e) {
-                exit(1);
+                return 1;
             }
         });
         

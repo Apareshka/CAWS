@@ -5,9 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Landing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="/web/styles/index.css">
 </head>
 <body>
-    <div id="root"></div>
+	<div id="root">
+	<div class="header valign-bottom flex-column">
+		<div class="container">
+			<div class="row">
+				<h1 class="white-text">More than 7 bilion people<br>live on our planet.</h1>
+			</div>
+			<div class="row">
+				<span class="white-text subtitle">And more than 160 milion suffer from natural hazards.</span>
+			</div>
+			<div class="row">
+				<a href="/service" class="indigo btn">Check how much</a>
+			</div>
+		</div>
+	</div>
+	<div class="container text-container-ye">
+		<div class="row">
+			<h2 class="text-title">Natural disaster problem becomes more <br>actual every day.</h2>
+			<p>According to UN statistics, each year about <b>90 000</b> people die due to natural hazards and more than <b>160 bilion</b> get affected by them. Sure, some people are more vulnerable to this disasters because of geographical and economical factors. Our mission is to find those who have the biggest risk.</p>
+		</div>
+		<div class="row">
+			<h2 class="text-title">How does it work?</h2>
+			<p>We collect and analize information for natural disasters and economics and demographics for each country, calculating it's <b>Natural Hazard Risk Coefficient (NHRC)</b>. Larger coeficient means larger threat for people, so we can define which social group is the most vulnerable.</p>
+		</div>
+		<div class="row"><a href="/service" class="btn indigo">View HNRC for each country</a></div>
+	</div>
+	<footer class="page-footer indigo">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Natural Hazard Risk Definement System</h5>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://github.com/apareshka/caws">Github repository</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)_per_capita">Economical data source</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://en.wikipedia.org/wiki/List_of_countries_by_natural_disaster_risk">Natural hazards data source</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://en.wikipedia.org/wiki/List_of_countries_by_median_age">Median age data source</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Bohdan Yankovskyi and Ivan Zadvornov <br>
+            This project is under <a href="">Apache 2.0</a> license
+          </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="/web/dist/index_bundle.js"></script>
 </body>
 </html>

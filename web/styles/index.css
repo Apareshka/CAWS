@@ -6,3 +6,67 @@ html, body {
 #root {
     font: 13pt Roboto;
 }
+.header{
+	background-image: url("/web/assets/Earth.jpg");/*Photo by NASA on Unsplash*/
+	background-attachment: fixed;
+	background-size: cover;
+	min-height: 100vh;
+	position: relative;
+	z-index: 1;
+	padding-bottom: 15%;
+}
+
+.header::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	background: #0005;
+}
+
+.valign-bottom {
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-start;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.flex-column.valign-bottom {
+	align-items: flex-start;
+	justify-content: flex-end;
+}
+
+.justify-center {
+	justify-content: center;
+}
+.container{
+}
+.row{
+	margin-bottom:  0px;
+}
+.subtitle{
+	font-size: 1.5em;
+}
+h1{
+	font-size: 3.50em;
+}
+.btn{
+	display: inline-block;
+	margin-top: 1em;
+}
+.text-title
+{
+	font-size: 3em;
+}
+p{
+	font-size: 1.5em;
+}
+.text-container-ye{
+	margin-bottom: 15px;
+}

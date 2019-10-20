@@ -6,16 +6,17 @@ Bohdan "Apareshka" Yankovsky
 Ivan "ivteplo" Zadvornov 
 
 # Used content
-Python 3 
+
+## Python 3 :
 Libs: BeautifulSoup4, requests, pandas, numpy 
 
-Javascript:
+## Javascript and Node.js:
 Libs: ReactJS, Materialize UI, Webpack, Babel
 
-CSS:
+## CSS:
 Libs: Google Materialize
 
-PHP:
+## PHP:
 Libs: Klein
 
 Articles:  
